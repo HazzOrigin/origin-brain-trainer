@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Origin Brain Trainer - MCP File Uploader</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Origin Brain Trainer</h1>
+            <p>Drag. Drop. Deploy to your Model Context Protocol server.</p>
+        </div>
+
+        <div class="main-card">
+            <div class="form-group">
+                <label for="serverUrl">MCP Server Endpoint</label>
+                <input 
+                    type="text" 
+                    id="serverUrl" 
+                    class="server-url-input"
+                    placeholder="https://your-mcp-server.com/upload"
+                    value="https://your-mcp-server.com/upload"
+                />
+            </div>
+
+            <div class="form-group">
+                <label>Files</label>
+                <div class="drop-zone" id="dropZone">
+                    <div class="drop-zone-content">
+                        <div class="drop-icon">📦</div>
+                        <div class="drop-text">Drop your files here</div>
+                        <div class="drop-subtext">or click to browse</div>
+                    </div>
+                </div>
+                <input type="file" id="fileInput" class="file-input" multiple />
+                <div class="file-list" id="fileList"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="instructions">Instructions</label>
+                <textarea 
+                    id="instructions" 
+                    class="instructions-input"
+                    placeholder="Enter processing instructions for the MCP server...&#10;&#10;Example: Process these files and extract metadata, then index them for semantic search."
+                ></textarea>
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-secondary" id="clearBtn">Clear All</button>
+                <button class="btn btn-primary" id="uploadBtn" disabled>
+                    <span id="uploadBtnText">Upload to MCP</span>
+                </button>
+            </div>
+
+            <div id="statusContainer"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
